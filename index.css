@@ -1,6 +1,7 @@
 .background {
-text-align: center;
+    text-align: center;
     background-color: #94d2bd;
+    
 }
 .title {
 
@@ -9,4 +10,26 @@ text-align: center;
     font-size: 100px;
     margin-top: 50px;
     
+}
+.bt{
+transition: 0.7s;
+
+}
+.bt:hover{
+
+   font-size: 60px;
+
+
+}
+.sub{
+
+margin-bottom: 50px;
+
+}
+.rotation1{
+    transform: rotate(-5deg);
+}
+
+.rotation2{
+    transform: rotate(6deg);
 }

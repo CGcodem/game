@@ -9,17 +9,24 @@
     text-align: center;
     font-size: 100px;
     margin-top: 50px;
+    font-family: 'Nunito', sans-serif;
     
 }
 .bt{
 transition: 0.7s;
 
+
+
 }
 .bt:hover{
 
-   font-size: 60px;
+font-size: 120px;
+
+}
+.btn {
 
 
+    margin-top: 100px;
 }
 .sub{
 
@@ -32,4 +39,10 @@ margin-bottom: 50px;
 
 .rotation2{
     transform: rotate(6deg);
+}
+.and {
+margin-top: 70px;
+margin-bottom: 70px;
+padding-top: 50px;
+
 }

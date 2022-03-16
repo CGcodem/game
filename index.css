@@ -6,7 +6,7 @@
 h2{
 
     font-family: 'Press Start 2P', cursive;
-    margin-top: 30px;
+    
 
 
 }
@@ -39,6 +39,7 @@ transition: 0.7s;
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     transition: 0.7s;
+    margin-top: 200px;
 }
 .pixel-btn:hover{
 
@@ -61,7 +62,7 @@ border-radius: 20px;
 }
 .sub{
 
-margin-bottom: 50px;
+margin-top:80px;
 
 }
 

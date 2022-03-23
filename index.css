@@ -1,21 +1,23 @@
 .background {
     text-align: center;
-    background-color: #94d2bd;
-    
+    background-color: #d8c99b;
+    height: 100px;
 }
 h2{
 
     font-family: 'Press Start 2P', cursive;
-    
+    color: #bd632f;
+    font-size: 100px;
 
 
 }
+
 .title {
 
-    color: #ca6702;
+    color:#273e47;
     text-align: center;
     font-size: 100px;
-    margin-top: 50px;
+    margin-top: 100px;
     font-family: 'Press Start 2P', cursive;
     
 }
@@ -39,13 +41,14 @@ transition: 0.7s;
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     transition: 0.7s;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 .pixel-btn:hover{
 
     width: 500px;
     height:150px ;
     padding: 40px 0;
+cursor:pointer; 
 
 }
 
@@ -53,7 +56,7 @@ transition: 0.7s;
 
 font-size: 100px;
 border-radius: 20px;
-
+cursor: url(./images/custom-cursor.png);
 }
 .btn {
 

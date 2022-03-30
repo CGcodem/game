@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/level.css">
+</head>
+<body>
+  <div class="app">
+    <div class="ccc-character">
+      <img :src="character.image" alt="">
+    </div>
+    <div class="ccc-world-container">
+      <div class="ccc-world" :style="{
+        top: (this.character.y * -80) + 'vh',
+        left: (this.character.x * -80) + 'vh'
+      }">
+        <div v-for="row of [0,1,2,3,4]" :key="row" class="ccc-world-row">
+          <div class="ccc-world-cell" v-for="cell of [0,1,2,3,4]" :key="cell" ></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="js/level.js"></script>
+</body>
+</html>

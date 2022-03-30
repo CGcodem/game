@@ -4,6 +4,7 @@ const app = {
       level: 1,
       mode: 'normal',
       isDed: false,
+      gameStatus: 'game',
       noGoPlaces: [{
         x: 3,
         y:3,
@@ -14,6 +15,10 @@ const app = {
         x: 4,
         y:2,
       }],
+      goalPosition: {
+        x: 2,
+        y: 2
+      },
       character: {
         canMove: true,
         x: 0,
@@ -27,7 +32,7 @@ const app = {
     moveCharacter(axis, amount) {
       if (
         this.character.canMove 
-        && !this.isDed
+        && this.gameStatus === "game"
         && this.character[axis]+ amount  >= 0
         && this.character[axis]+ amount  <= 4
           ){
@@ -47,9 +52,10 @@ const app = {
         const checkDed = this.noGoPlaces.find( (placePosition) =>{
           return placePosition.x === this.character.x && placePosition.y === this.character.y
         })
-        if (checkDed){
+        const checkWin = this.goalPosition.x === this.character.x && this.goalPosition.y === this.character.y
+        if (checkDed || checkWin){
           setTimeout(() => {
-            this.isDed = checkDed
+            this.gameStatus = checkDed ? 'ded' : 'won';
           },800)
         }
       }
@@ -87,3 +93,4 @@ const app = {
 
 
 Vue.createApp(app).mount('.app')
+window.scrollTo(0,0)

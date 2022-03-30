@@ -9,11 +9,18 @@
 </head>
 <body>
   <div class="app">
-    <div v-if="isDed" class="ded-modal">
-      <h2>You die</h2>
+    <div v-if="gameStatus != 'game'" class="ded-modal">
+      <div v-if="gameStatus === 'ded'">
+        <h2>You die</h2>
 
-      <p>Text when the dude die</p>
-      <a :href="redirectUrl">Re-Try</a>
+        <p>Text when the dude die</p>
+        <a :href="redirectUrl">Re-Try</a>  
+      </div>
+      <div v-else>
+        <h2>You Won</h2>
+        <p>Text when you won</p>
+        <a :href="'level-'+level+1+'.html'">Next level</a>
+      </div>
     </div>
     <div class="ccc-level" v-else>
       <div class="ccc-character">

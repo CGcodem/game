@@ -50,6 +50,12 @@ transition: 0.7s;
     padding: 40px 0;
 cursor:pointer; 
 
+
+}
+.pixel-btn:active {
+
+    width: 650px ;
+    height: 200;
 }
 
 .bt:hover{

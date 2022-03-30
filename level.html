@@ -9,19 +9,29 @@
 </head>
 <body>
   <div class="app">
-    <div class="ccc-character">
-      <img :src="character.image" alt="">
-    </div>
-    <div class="ccc-world-container">
-      <div class="ccc-world" :style="{
-        top: (this.character.y * -80) + 'vh',
-        left: (this.character.x * -80) + 'vh'
-      }">
-        <div v-for="row of [0,1,2,3,4]" :key="row" class="ccc-world-row">
-          <div class="ccc-world-cell" v-for="cell of [0,1,2,3,4]" :key="cell" ></div>
-        </div>
-      </div>
+    <div v-if="isDed" class="ded-modal">
+      <h2>You die</h2>
 
+      <p>Text when the dude die</p>
+      <a :href="redirectUrl">Re-Try</a>
+    </div>
+    <div class="ccc-level" v-else>
+      <div class="ccc-character">
+        <img :src="'character/'+character.image" alt="">
+      </div>
+      <div class="ccc-world-container">
+        <div class="ccc-black-space"></div>
+        <div class="ccc-world" :style="{
+          top: (this.character.y * -100) + 'vh',
+          left: (this.character.x * -100) + 'vh',
+          'background-image': 'url(maps/squared-'+level+'.png)'
+        }">
+          <div v-for="row of [0,1,2,3,4]" :key="row" class="ccc-world-row">
+            <div class="ccc-world-cell" v-for="cell of [0,1,2,3,4]" :key="cell" ></div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
   <script src="https://unpkg.com/vue@3"></script>

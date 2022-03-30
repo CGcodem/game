@@ -1,20 +1,72 @@
 const app = {
   data() {
     return {
+      level: 1,
+      mode: 'normal',
+      isDed: false,
+      noGoPlaces: [{
+        x: 3,
+        y:3,
+      },{
+        x: 1,
+        y:2,
+      },{
+        x: 4,
+        y:2,
+      }],
       character: {
+        canMove: true,
         x: 0,
         y:0,
-        image: 'images/go.png'
+        image: 'idle.png'
       }
 
     }
   },
   methods: {
     moveCharacter(axis, amount) {
-      this.character[axis] = this.character[axis]+ amount 
+      if (
+        this.character.canMove 
+        && !this.isDed
+        && this.character[axis]+ amount  >= 0
+        && this.character[axis]+ amount  <= 4
+          ){
+        this.character[axis] = this.character[axis]+ amount 
+        this.character.canMove = false
+        if (axis === 'y'){
+          this.character.image = 'y.gif'
+        }
+        if (axis === 'x'){
+          this.character.image = 'x.gif'
+        }  
+        setTimeout(() => {
+          this.character.canMove = true
+          this.character.image = 'idle.png'
+        },500)
+        
+        const checkDed = this.noGoPlaces.find( (placePosition) =>{
+          return placePosition.x === this.character.x && placePosition.y === this.character.y
+        })
+        if (checkDed){
+          setTimeout(() => {
+            this.isDed = checkDed
+          },800)
+        }
+      }
+
     }
   },
   mounted() {
+    const mode = window.localStorage.getItem('game_mode')
+    if (mode){
+      this.mode = mode
+    }
+    if (this.mode === 'hardcore'){
+      this.redirectUrl = 'index.html'
+    }else{
+      this.redirectUrl = ''
+    }
+
     window.onkeydown = (e) => {
       console.log(e.keyCode)
       if (e.keyCode=== 37){

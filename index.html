@@ -24,7 +24,7 @@
 
 
     
-    <div class="pixel-btn">
+    <div class="pixel-btn click">
         start
     </div>
   
@@ -56,5 +56,20 @@
 //         audioInit
 //     }
 // }
+
+const click = new Audio ('click.mp3')
+let audioInit = false
+ document.onclick = () => {
+     if (!audioInit){
+        click.pause()
+        click.currentTime = 0
+         click.play()
+        audioInit
+    }
+
+
+
+
+}
 </script>
 </html>

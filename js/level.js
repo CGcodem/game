@@ -63,6 +63,10 @@ const app = {
     }
   },
   mounted() {
+    window.scrollTo(0,0)
+    setTimeout(() => {
+      window.scrollTo(0,0)
+    },200) 
     const mode = window.localStorage.getItem('game_mode')
     if (mode){
       this.mode = mode
@@ -93,4 +97,3 @@ const app = {
 
 
 Vue.createApp(app).mount('.app')
-window.scrollTo(0,0)

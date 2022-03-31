@@ -81,3 +81,23 @@ margin-bottom: 70px;
 padding-top: 50px;
 
 }
+.about {
+
+
+background-color: green;
+color: white;
+height: 50px;
+    width: 150px;
+border: none;
+margin-top: 200px;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+padding: 50px 0 ;
+margin-bottom: 100px;
+}
+.aboutus{
+
+margin-top: -25px;
+
+}

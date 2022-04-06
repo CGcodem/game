@@ -23,7 +23,7 @@ h2{
 }
 .bt{
 transition: 0.7s;
-
+text-decoration: none;
 
 
 }
@@ -42,6 +42,7 @@ transition: 0.7s;
     margin: auto;
     transition: 0.7s;
     margin-top: 100px;
+    text-decoration: none;
 }
 .pixel-btn:hover{
 

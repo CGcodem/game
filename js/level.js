@@ -8,12 +8,19 @@ const app = {
       noGoUpPlaces: [{
         x: 1,
         y:2
+      },{
+        x: 3,
+        y: 1,
       }],
 
       noGoDownPlaces: [{
-        x: 1,
-        y:2
+        x: 2,
+        y:2,
+      },{
+        x: 3,
+        y:0,
       }],
+
       noGoPlaces: [{
         x: 2,
         y:0,
@@ -120,7 +127,10 @@ const app = {
         const check = this.noGoDownPlaces.find( (placePosition) =>{
           return placePosition.x === this.character.x && placePosition.y === this.character.y
         })
-        this.moveCharacter('y',1);
+
+        if (!check){
+          this.moveCharacter('y',1);
+        }
       }
     }
   }

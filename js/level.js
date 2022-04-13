@@ -5,19 +5,47 @@ const app = {
       mode: 'normal',
       isDed: false,
       gameStatus: 'game',
-      noGoPlaces: [{
+      noGoUpPlaces: [{
+        x: 1,
+        y:2
+      },{
         x: 3,
-        y:3,
+        y: 1,
+      }],
+
+      noGoDownPlaces: [{
+        x: 2,
+        y:2,
+      },{
+        x: 3,
+        y:0,
+      }],
+
+      noGoPlaces: [{
+        x: 2,
+        y:0,
       },{
         x: 1,
+        y:1,
+      },{
+        x: 3,
         y:2,
       },{
+        x: 1,
+        y:3,
+      },{
+        x: 2,
+        y:3,
+      },{
+        x: 2,
+        y:4,
+      },{
         x: 4,
-        y:2,
+        y:4,
       }],
       goalPosition: {
-        x: 2,
-        y: 2
+        x: 3,
+        y: 4
       },
       character: {
         canMove: true,
@@ -83,13 +111,26 @@ const app = {
         this.moveCharacter('x',-1);
       }
       if (e.keyCode=== 38){
-        this.moveCharacter('y',-1);
+
+        const check = this.noGoUpPlaces.find( (placePosition) =>{
+          return placePosition.x === this.character.x && placePosition.y === this.character.y
+        })
+        if (!check){
+          this.moveCharacter('y',-1);
+        }
       }
       if (e.keyCode=== 39){
         this.moveCharacter('x',1);
       }
       if (e.keyCode=== 40){
-        this.moveCharacter('y',1);
+
+        const check = this.noGoDownPlaces.find( (placePosition) =>{
+          return placePosition.x === this.character.x && placePosition.y === this.character.y
+        })
+
+        if (!check){
+          this.moveCharacter('y',1);
+        }
       }
     }
   }

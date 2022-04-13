@@ -5,6 +5,15 @@ const app = {
       mode: 'normal',
       isDed: false,
       gameStatus: 'game',
+      noGoUpPlaces: [{
+        x: 1,
+        y:2
+      }],
+
+      noGoDownPlaces: [{
+        x: 1,
+        y:2
+      }],
       noGoPlaces: [{
         x: 2,
         y:0,
@@ -95,12 +104,22 @@ const app = {
         this.moveCharacter('x',-1);
       }
       if (e.keyCode=== 38){
-        this.moveCharacter('y',-1);
+
+        const check = this.noGoUpPlaces.find( (placePosition) =>{
+          return placePosition.x === this.character.x && placePosition.y === this.character.y
+        })
+        if (!check){
+          this.moveCharacter('y',-1);
+        }
       }
       if (e.keyCode=== 39){
         this.moveCharacter('x',1);
       }
       if (e.keyCode=== 40){
+
+        const check = this.noGoDownPlaces.find( (placePosition) =>{
+          return placePosition.x === this.character.x && placePosition.y === this.character.y
+        })
         this.moveCharacter('y',1);
       }
     }

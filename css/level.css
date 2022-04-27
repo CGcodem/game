@@ -64,6 +64,8 @@ p{
 }
 
 .win-modal{
-  background-color: whitesmoke;
+  background-color: white;
+  text-align: center;
+  background-size: cover;
 }
 

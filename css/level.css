@@ -42,11 +42,28 @@ body{
 .ccc-world-cell{
   height: 100vh;
   width: 100vh;
-  /* box-shadow: inset 0 0 10px blue;
-  background-color: rgba(255,0,0,0.3); */
+ 
 }
 .ded-modal{
   width: 100vw;
   height: 100vh;
   text-align: center;
 }
+p{
+  padding-top: 50px;
+  text-align: center;
+  font-size: 100px;
+  margin: 0;
+}
+
+
+.ded-modal{
+  background-image: url(../images/heaven.png);
+  background-size: cover;
+  top: -600px
+}
+
+.win-modal{
+  background-color: whitesmoke;
+}
+

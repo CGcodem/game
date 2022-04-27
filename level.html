@@ -9,16 +9,14 @@
 </head>
 <body>
   <div class="app">
-    <div v-if="gameStatus != 'game'" class="ded-modal">
-      <div v-if="gameStatus === 'ded'">
-        <h2>You die</h2>
-
-        <p>Text when the dude die</p>
-        <a :href="redirectUrl">Re-Try</a>  
+    <div v-if="gameStatus != 'game'" :class="gameStatus === 'ded' ? 'ded-modal' : 'win-modal' ">
+      <div v-if="gameStatus === 'ded'" class="ded-div">
+        <p>YOU SEE A LIGHT</p>
+        <a :href="redirectUrl">Try again</a>  
       </div>
       <div v-else>
-        <h2>You Won</h2>
-        <p>Text when you won</p>
+        <h2>YOU HAVE WON</h2>
+        <p>CONGRATULATIONS, YOU'VE MADE IT</p>
         <a :href="'level-'+level+1+'.html'">Next level</a>
       </div>
     </div>

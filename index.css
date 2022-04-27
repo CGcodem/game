@@ -8,9 +8,20 @@ h2{
     font-family: 'Press Start 2P', cursive;
     color: #bd632f;
     font-size: 50%;
+    animation: hole 3s 1;
 
 
 }
+@keyframes hole {
+
+0% {transform: translate(-1000px);}
+100%{transform: translate(0px);
+}
+
+}
+
+
+
 
 .title {
 
@@ -19,8 +30,19 @@ h2{
     font-size: 800%;
     margin-top: 100px;
     font-family: 'Press Start 2P', cursive;
+    animation: text 3s 1;
+    
+    
     
 }
+@keyframes text {
+
+0% {transform: translate(0,-500px);}
+100% {transform: translate(0,0px);}
+
+
+}
+
 .bt{
 transition: 0.7s;
 text-decoration: none;
@@ -31,6 +53,7 @@ text-decoration: none;
 .pixel-btn{
     background-image:url(./images/bg-btn.png) ;
     width: 300px;
+    display: inline-block;
     height: 100px;
     font-size: 40px;
     background-size: 100% 100%;
@@ -42,7 +65,15 @@ text-decoration: none;
     margin: auto;
     transition: 0.7s;
     margin-top: 100px;
-    text-decoration: none;
+    text-decoration: none !important;
+    position: relative;
+    animation: start 3s 1;
+}
+@keyframes start {
+
+0% {transform: translate(0,500px);}
+100% {transform: translate(0,0px);}
+
 }
 .pixel-btn:hover{
 
